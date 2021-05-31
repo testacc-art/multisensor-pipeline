@@ -123,10 +123,15 @@ jobs:
           fetch-depth: 1
 
       - name: Setup Virtual Environment
+        shell: pwsh
         run: |
           python3 -m venv venv
-          ls -R
-          venv/bin/python3 -m pip install --upgrade -r requirements.d/venv.txt
+          if (IsWindows) {
+            venv/Scripts/python -m pip install --upgrade -r requirements.d/venv.txt
+          } else {
+            venv/bin/python -m pip install --upgrade -r requirements.d/venv.txt
+          }
+          
 
       # Take multiple attempts at running the tests
       - name: Test Attempt 1

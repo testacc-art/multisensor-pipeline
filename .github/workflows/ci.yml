@@ -125,9 +125,7 @@ jobs:
       - name: Setup Virtual Environment
         run: |
           python3 -m venv venv
-          ls
-          ls /venv
-          ls /venv/bin
+          ls -R
           venv/bin/python3 -m pip install --upgrade -r requirements.d/venv.txt
 
       # Take multiple attempts at running the tests

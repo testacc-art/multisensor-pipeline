@@ -127,6 +127,9 @@ jobs:
         run: |
           python3 -m venv venv
           if ($IsWindows) {
+            py -m pip --version
+            curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+            py get-pip.py
             venv/Scripts/python -m pip install --upgrade -r requirements.d/venv.txt
           } else {
             venv/bin/python -m pip install --upgrade -r requirements.d/venv.txt

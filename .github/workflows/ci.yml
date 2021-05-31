@@ -52,7 +52,7 @@ jobs:
           python-version: ${{ matrix.py }}
       
       - name: Python version
-        run: python --version
+        run: python3 --version
         
       - name: Get pip cache directory
         id: pip-cache

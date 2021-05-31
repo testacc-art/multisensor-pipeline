@@ -126,7 +126,7 @@ jobs:
         shell: pwsh
         run: |
           python3 -m venv venv
-          if (IsWindows) {
+          if ($IsWindows) {
             venv/Scripts/python -m pip install --upgrade -r requirements.d/venv.txt
           } else {
             venv/bin/python -m pip install --upgrade -r requirements.d/venv.txt
